@@ -1,0 +1,36 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-hello-world
+spec:
+  replicas: 3
+  selector:
+    matchLables:
+      app: go-hello-world
+  template:
+    metadata:
+      lables:
+        app: go-hello-world
+  spec:
+    containers:
+    - name: go-hello-world
+      image: fourirakbar/go-hello-wolrd:1.0.0
+      imagePullPolicy: IfNotPresent
+      ports:
+        - containerPort: 8080
+      livenessProbe:
+        httpGet:
+          path: /health
+          port: 8080
+          schema: HTTP
+        initialDelaySeconds: 3
+        periodSeconds: 15
+        timeoutSeconds: 5
+      readinessProbe:
+        httpGet:
+          path: /readiness
+          port: 8080
+          schema: HTTP
+        initialDelaySeconds: 5
+        timeoutSeconds: 1

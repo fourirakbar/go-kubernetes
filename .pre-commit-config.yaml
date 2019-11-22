@@ -1,0 +1,15 @@
+repos:
+  - repo: git://github.com/pre-commit/pre-commit-hooks
+    rev: v2.2.3
+    hooks:
+      - id: check-merge-conflict
+      - id: check-symlinks
+      - id: check-yaml
+      - id: detect-private-key
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+
+  - repo: https://github.com/petalmd/dockerfile-pre-commit
+    rev: ''  # Use the revision rev you want to point at
+    hooks:
+      - id: dockerlint
