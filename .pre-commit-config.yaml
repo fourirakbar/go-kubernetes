@@ -9,7 +9,7 @@ repos:
       - id: end-of-file-fixer
       - id: trailing-whitespace
 
-  - repo: https://github.com/petalmd/dockerfile-pre-commit
-    rev: ''  # Use the revision rev you want to point at
-    hooks:
-      - id: dockerlint
+  # - repo: https://github.com/petalmd/dockerfile-pre-commit
+  #   rev: ''  # Use the revision rev you want to point at
+  #   hooks:
+  #     - id: dockerlint
