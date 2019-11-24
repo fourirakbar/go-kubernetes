@@ -15,7 +15,7 @@ spec:
   spec:
     containers:
     - name: go-hello-world
-      image: fourirakbar/go-hello-wolrd:1.0.0
+      image: fourirakbar/go-hello-world:1.0.0
       imagePullPolicy: IfNotPresent
       ports:
         - containerPort: 8080
